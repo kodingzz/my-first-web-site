@@ -1,0 +1,161 @@
+
+  body{
+        margin: 0;
+    }
+    h1{
+        font-size: 40px;
+        text-align: center;
+        border-bottom: 1px solid gray;
+        margin: 0;
+        padding: 20px;
+        animation-name: bgchane;
+        animation-duration: 10s;
+        animation-iteration-count: infinite;
+
+
+      
+    
+    }
+    
+    
+    @keyframes bgchane{
+        0%{background-color: brown;}
+        25%{background-color: silver;}
+        50%{background-color: gold;}
+        75%{background-color: palegreen;}
+        100%{background-color: darkslateblue;}
+
+
+    }
+    a{
+        text-decoration: none;
+        color: black;
+        transition: color, 5s, ease-in;
+    }
+    a:hover{
+        color: blue;
+      
+    }
+    a:active{
+        color: red;
+    }
+   
+       
+        
+
+   #grid ol{
+    border-right: 1px solid gray;
+    width: 130px;
+    margin: 0;
+    padding: 20px;
+    /* font-weight: 550; */
+    font-style: italic;
+     padding-left: 33px;
+     font-size: 20px;
+     background-color: pink;
+
+    
+   
+     
+   }
+   #grid{
+    display: grid;
+    grid-template-columns: 220px 1fr;
+   
+}
+   #grid ol li:active{
+    transform: rotate(45deg);
+   }
+   #grid ol li{
+    position: fixed;;
+   }
+   #grid ol li:nth-child(2){
+    top: 155px;
+   }
+   #grid ol li:nth-child(3){
+    top: 195px;
+   }
+  
+    #grid #article{
+        padding: 25px;
+        text-align: center;
+    }
+
+    @media(max-width:700px){   /* 반응형 웹 */
+        h1{
+            border-bottom: none;
+            width: 100%;
+        }
+        ol{
+            border-right:none;
+        }
+        #grid{
+            display: block;
+
+        }
+        
+        #grid ol:first-child{
+            display: flex;
+            list-style-type: none;
+            height: 50px;
+            border-bottom: 1px solid gray;
+            border-right: none;
+            padding: 0;
+            width: 100%;
+            justify-content: space-around;
+            align-items: center;
+            background-color:skyblue ;
+
+        
+        }
+        #grid ol li{
+            position: static;
+           }
+        #grid ol li:nth-child(1){
+            flex-shrink: 1;
+        }
+        #grid ol li:nth-child(2){
+            flex-shrink: 2;
+        }
+        #grid ol li:nth-child(3){
+            flex-shrink: 1;
+        }
+        
+       
+        .index-right iframe{
+            width: 80%;
+            
+        }
+       
+    }
+    .index-right{
+        text-align: center;
+    }
+    .first-row{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+       
+    }
+    .second-row div:first-child{
+        margin: 40px 0;
+    }
+  
+    img{
+        float: left;
+        margin-right: 10px;
+       
+    }
+    img:hover{
+        animation-name: scale ;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+    }
+    @keyframes scale{
+        0%{transform: scale(1);}
+        50%{transform: scale(2);}
+        100%{transform: scale(1);}
+    }
+ 
+    
+    
