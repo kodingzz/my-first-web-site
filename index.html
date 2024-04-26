@@ -16,7 +16,45 @@
 </script> -->
 
     </head>
-    
+    <script>
+        function LinksSetColor(color){
+            var list= document.querySelectorAll('a');
+                        var i =0;
+                        while(i <list.length){
+                            list[i].style.color=color;
+                             i++;
+                            }
+        }
+        function BodySetColor(color){
+            var target= document.querySelector('body');
+            target.style.color= color;
+        }
+        function nightDayHandler(self){  /* 주의!!) onclick 이벤트가 발생하는 태그를 가리키는것이 this인데 현재 이부분에서는 this가 
+            가리키는것이 명확하지 않으므로  self로 매개변수를 주어 input태그를 가리킴을 명시한다. */
+             var target= document.querySelector('body');  /* 중복되는 코드의 제거를 위해 */
+                     if(self.value==='night'){
+                        target.style.backgroundColor='black'; 
+                        BodySetColor('white');
+                        self.value='day';
+
+                        // var list= document.querySelectorAll('a');   --> 코드의 중복을 최대한 제거해야하므로 이 코드또한 함수로 만들어 간소화
+                        // var i =0;
+                        // while(i <list.length){
+                        //     list[i].style.color='powderblue';
+                        //      i++;
+                        //     }
+                        LinksSetColor('powderblue');
+                     }
+                     else{
+                        target.style.backgroundColor='white'; 
+                        BodySetColor('black');
+                        self.value='night';
+
+                        LinksSetColor('black');
+
+                    }
+                }   
+    </script>
     <body>
         <h1 ><a href="index.html">Introduction LoL streamers</a> </h1>
            
@@ -45,53 +83,8 @@
         
                 <h2><a href="https://www.leagueoflegends.com/ko-kr/">Leage Of Legends</a></h2>
                 
-                    <input type="button" value="night"  onclick="document.querySelector('body').style.backgroundColor='black'; 
-                    document.querySelector('body').style.color='white';">
-                    <input type="button" value="day" onclick="document.querySelector('body').style.backgroundColor='white';
-                    document.querySelector('body').style.color='black';">
-
-                     <!-- <input  id="night_day" type="button" value="night" onclick="
-                     if(document.querySelector('#night_day').value==='night'){
-                        document.querySelector('body').style.backgroundColor='black'; 
-                        document.querySelector('body').style.color='white';
-                        document.querySelector('#night_day').value='day';
-                     }
-                     else{
-                        document.querySelector('body').style.backgroundColor='white'; 
-                        document.querySelector('body').style.color='black';
-                        document.querySelector('#night_day').value='night';
-                     }"
-                     > -->
-
-                     <input type="button" value="night" onclick="
-                     var target= document.querySelector('body');  /* 중복되는 코드의 제거를 위해 */
-                     if(this.value==='night'){
-                        target.style.backgroundColor='black'; 
-                        target.style.color='white';
-                        this.value='day';
-
-                        var list= document.querySelectorAll('a');
-                        var i =0;
-                        while(i <list.length){
-                            list[i].style.color='powderblue';
-                             i++;
-                            }
-    
-                     }
-                     else{
-                        target.style.backgroundColor='white'; 
-                        target.style.color='black';
-                        this.value='night';
-
-                        var list= document.querySelectorAll('a');
-                        var i =0;
-                        while(i <list.length){
-                            list[i].style.color='black';
-                             i++;
-                            }
-                     }"
-                    
-                     >
+                <input type="button" value="night" onclick="nightDayHandler(this)">
+                      <!--함수에 this인자를 주어 this가 가리키는것이 input 태그임을 명시해줘야한다.-->
                     
                
             </div>
