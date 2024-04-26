@@ -8,17 +8,13 @@
         border-bottom: 1px solid gray;
         margin: 0;
         padding: 20px;
-        animation-name: bgchane;
+        animation-name: bgchange;
         animation-duration: 10s;
         animation-iteration-count: infinite;
-
-
-      
-    
     }
     
     
-    @keyframes bgchane{
+    @keyframes bgchange{
         0%{background-color: brown;}
         25%{background-color: silver;}
         50%{background-color: gold;}
@@ -31,6 +27,7 @@
         text-decoration: none;
         color: black;
         transition: color, 5s, ease-in;
+        
     }
     a:hover{
         color: blue;

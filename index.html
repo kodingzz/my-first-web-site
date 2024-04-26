@@ -6,21 +6,19 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" href="style.css">
         <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LN6EEF9F28"></script>
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-LN6EEF9F28"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
   gtag('config', 'G-LN6EEF9F28');
-</script>
+</script> -->
 
     </head>
     
-
     <body>
-        <h1 ><a href="index.html">Introduction LoL streamers</a> 
-            </h1>
+        <h1 ><a href="index.html">Introduction LoL streamers</a> </h1>
            
     
 
@@ -51,7 +49,50 @@
                     document.querySelector('body').style.color='white';">
                     <input type="button" value="day" onclick="document.querySelector('body').style.backgroundColor='white';
                     document.querySelector('body').style.color='black';">
-               
+
+                     <!-- <input  id="night_day" type="button" value="night" onclick="
+                     if(document.querySelector('#night_day').value==='night'){
+                        document.querySelector('body').style.backgroundColor='black'; 
+                        document.querySelector('body').style.color='white';
+                        document.querySelector('#night_day').value='day';
+                     }
+                     else{
+                        document.querySelector('body').style.backgroundColor='white'; 
+                        document.querySelector('body').style.color='black';
+                        document.querySelector('#night_day').value='night';
+                     }"
+                     > -->
+
+                     <input type="button" value="night" onclick="
+                     var target= document.querySelector('body');  /* 중복되는 코드의 제거를 위해 */
+                     if(this.value==='night'){
+                        target.style.backgroundColor='black'; 
+                        target.style.color='white';
+                        this.value='day';
+
+                        var list= document.querySelectorAll('a');
+                        var i =0;
+                        while(i <list.length){
+                            list[i].style.color='powderblue';
+                             i++;
+                            }
+    
+                     }
+                     else{
+                        target.style.backgroundColor='white'; 
+                        target.style.color='black';
+                        this.value='night';
+
+                        var list= document.querySelectorAll('a');
+                        var i =0;
+                        while(i <list.length){
+                            list[i].style.color='black';
+                             i++;
+                            }
+                     }"
+                    
+                     >
+                    
                
             </div>
                 <iframe width="800px" height="400px" src="https://www.youtube.com/embed/3sgro6eu17E?si=WjaoCLhi-dsfCbi1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
